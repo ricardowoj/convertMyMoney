@@ -29,6 +29,8 @@ app.get('/cotacao', (req, res) => {
     })
 }) 
 
+init()
+
 app.listen(port, error => {
     if(error){
         return console.log("The server could not be started.")
