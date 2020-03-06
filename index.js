@@ -27,7 +27,7 @@ app.get('/cotacao', (req, res) => {
     return res.render('cotacao', {
         error: 'Valores inválidos'
     })
-})
+}) 
 
 app.listen(port, error => {
     if(error){
