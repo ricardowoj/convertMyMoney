@@ -1,0 +1,20 @@
+{
+  "name": "convertmymoney",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon start"
+  },
+  "author": "Ricardo Wojciechowski",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
+}
