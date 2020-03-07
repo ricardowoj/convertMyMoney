@@ -1,14 +1,17 @@
 {
   "name": "convertmymoney",
   "version": "1.0.0",
-  "description": "",
+  "description": "Convert money",
   "main": "index.js",
+  "engines": {
+    "node": "^12"
+  },
   "scripts": {
     "test": "jest",
     "start": "node index.js"
   },
   "author": "Ricardo Wojciechowski",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "ejs": "^3.0.1",
     "express": "^4.17.1",
