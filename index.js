@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const path = require('path')
+const moment = require('moment')
 
 const convert = require('./lib/convert')
 const apiCotacao = require('./lib/api.cotacao')
@@ -11,7 +12,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', async(req, res) => {
     const cotacao = await apiCotacao.getCotacao()
-    const data = await apiCotacao.getCotacaoData()
+    const dataOriginal = await apiCotacao.getCotacaoData()
+    data = moment(dataOriginal).format('DD/MM/YYYY')
     res.render('home', {
         cotacao, data
     })
