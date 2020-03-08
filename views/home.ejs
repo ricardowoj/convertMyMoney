@@ -1,11 +1,46 @@
 <%- include('header') %>
 
-<form method="GET" action="/cotacao">
-    <label for="cotacao">Cotação do dia <%- data %></label><br>
-    <input name="cotacao" type="text" placeholder="Cotação do dolar" value="<%- cotacao %>"><br>
-    <label for="quantidade"></label>
-    <input name="quantidade" type="text" placeholder="Quantidade de dolares"><br>
-    <button>Converter</button>
+<form>
+    <h3>Escolha a moeda para obter a sua cotação.</h3>
+    <h4>Cotação do dia <%= data %></h4>
+    <select id="selecionarMoeda" onchange="inserirMoeda()" onblur="calcular()">
+        <option id="">Escolha a moeda</option>
+        <option id="<%- cotacaoUSD %>">Dolar Comercial</option>
+        <option id="<%- cotacaoEUR %>">Euro</option>
+        <option id="<%- cotacaoARS %>">Peso Argentino</option>
+        <option id="<%- cotacaoBTC %>">Bitcoin</option>
+        <option id="<%- cotacaoGBP %>">Libra esterlina</option>
+        <option id="<%- cotacaoJPY %>">Iene Japonês</option>
+        <option id="<%- cotacaoAUD %>">Dólar Australiano</option>
+        <option id="<%- cotacaoCHF %>">Franco suíço</option>
+    </select>
+    <br>
+    <br>
+    <input type="text" id="cotacaoMoeda" placeholder="Cotação"><br>
+    <input id="quantidade" type="text" placeholder="Qual valor para cotação?" onblur="calcular()"><br>
+    <br>
+    <br>
+    <label for="">Valor cotado para real(R$):</label>
+    <input type="text" placeholder="Valor em reais" id="valorCalculado" readonly><br>
 </form>
-        
+<script>
+    function selecionarMoeda(){
+        var selectForm = document.getElementById('selecionarMoeda')
+        var moedaSelecionada = selectForm.options[selectForm.selectedIndex].id
+        return moedaSelecionada
+    }
+    function inserirMoeda(){
+        document.getElementById('cotacaoMoeda').value = selecionarMoeda()
+    }
+    function calcular(){
+        var calculo = 0
+        var quantidade = document.getElementById('quantidade').value
+        var cotacao = document.getElementById('cotacaoMoeda').value
+        var calculo = quantidade * cotacao
+        document.getElementById('valorCalculado').value = calculo
+    }
+</script>
+
+
+
 <%- include('footer') %>
