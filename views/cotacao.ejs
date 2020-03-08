@@ -1,17 +1,19 @@
 <%- include('header') %>
 
+<label for="cotacao">Cotação do dia: <%- data %></label><br>
+<label for="nameMoney">Moeda: <%- name %></label><br>
 <div class='resultado'>
     <% if(error){ %>
-        <%= error %>
+    <%= error %>
     <% } else { %>
-        $<%= quantidade %> 
-        dolares na cotação 
-        R$<%= cotacao %> 
-        é igual a 
-        R$<%= conversao %> 
-        reais
+    <%= quantidade %>
+    dolares na cotação
+    <%= cotacao %>
+    é igual a
+    <%= conversao %>
+    reais
     <% } %>
 </div>
 
-        
+
 <%- include('footer') %>
