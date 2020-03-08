@@ -1,18 +1,24 @@
 body {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 h1 img {
     width: 371px;
     margin: 20px;
 }
-input {
-    border: 1px solid #000000;
-    background: #fdfdfd;
-    font-size: 20px;
-    margin: 10px;
-    padding: 10px;
+
+.main {
+    align-self: center;
+    width: 500px;
+    /* border: 3px solid red; */
 }
-select {
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+input, select {
     border: 1px solid #000000;
     background: #fdfdfd;
     font-size: 20px;
@@ -30,6 +36,9 @@ button {
     padding-top: 5px;
     padding-bottom: 5px;
     margin: 10px;
+}
+input, select, button {
+    border-radius: 7px;
 }
 .resultado {
     padding: 10px;
